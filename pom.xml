@@ -5,70 +5,86 @@
   <groupId>com.co2calculator</groupId>
   <artifactId>co2-calculator</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-  </properties>
-  <dependencies>
 
+    <!-- Dependency Versions -->
+    <lombok.version>1.18.30</lombok.version>
+    <httpclient5.version>5.2.1</httpclient5.version>
+    <jackson-databind.version>2.15.2</jackson-databind.version>
+    <junit-jupiter.version>5.10.0</junit-jupiter.version>
+    <mockito-core.version>5.5.0</mockito-core.version>
+    <picocli.version>4.7.4</picocli.version>
+    <slf4j-api.version>1.7.5</slf4j-api.version>
+    <slf4j-simple.version>1.6.4</slf4j-simple.version>
+
+    <!-- Plugin Versions -->
+    <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+  </properties>
+
+  <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.30</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.httpcomponents.client5</groupId>
       <artifactId>httpclient5</artifactId>
-      <version>5.2.1</version>
+      <version>${httpclient5.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.15.2</version>
+      <version>${jackson-databind.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.10.0</version>
+      <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>5.5.0</version>
+      <version>${mockito-core.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>info.picocli</groupId>
       <artifactId>picocli</artifactId>
-      <version>4.7.4</version>
+      <version>${picocli.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.5</version>
+      <version>${slf4j-api.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.6.4</version>
+      <version>${slf4j-simple.version}</version>
     </dependency>
-
   </dependencies>
+
   <build>
     <plugins>
-      <!-- Maven Shade Plugin to create a fat JAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>${maven-shade-plugin.version}</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -85,19 +101,21 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
-          <source>17</source>
-          <target>17</target>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>${maven-surefire-plugin.version}</version>
       </plugin>
     </plugins>
   </build>

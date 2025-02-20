@@ -16,6 +16,11 @@ set ORS_TOKEN="your_api_key_here"
 ### Windows (PowerShell)
 $env:ORS_TOKEN="your_api_key_here"
 
+### Make sure ORS_TOKEN is present
+   ````bash
+   echo $ORS_TOKEN
+   ````
+
 ## The application can be run using Makefile or by running the Maven commands:
 
 ### Running with Makefile (Recommended)
