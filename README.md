@@ -41,6 +41,7 @@ $env:ORS_TOKEN="your_api_key_here"
    make run
    ````
 You will be prompted to enter the start city, end city, and transportation method interactively.
+![image](https://github.com/user-attachments/assets/3c199eae-352c-4299-8649-563d29017428)
 
 ### Clean and build using maven commands
 1. Clean and Compile 
